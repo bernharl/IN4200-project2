@@ -15,5 +15,6 @@ int main() {
 		printf("\n");
 	}
 	printf("%i\n", count_friends_of_ten(M, N, A));
+	free_2d(A, M, N);
 	return 0;
 }

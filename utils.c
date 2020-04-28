@@ -49,3 +49,16 @@ int** example_array() {
     A[3][4] = 3;
     return A;
 }
+
+void free_2d(int** A, int M, int N) {
+    /*for (int i = 0; i < M; i++) {
+        for (int j = 0; j < N; j++) {
+            free(A[i][j]);
+        }
+    }*/
+    //for (int i = 0; i < N; i++) {
+    //    free(A[i]);
+    //}
+    free(A[0]);
+    free(A);
+}
