@@ -1,11 +1,12 @@
 #include <stdlib.h>
 #include <stdio.h>
+#include <time.h>
 
 #include "mpi_count_friends_of_ten.c"
 #include "utils.c"
 
 int main(int argc, char **argv) {
-    int M=0, N=0, rank, num_triple_friends;
+    /*int M=0, N=0, rank, num_triple_friends;
     int **v=NULL;
     MPI_Init (&argc, &argv);
     MPI_Comm_rank (MPI_COMM_WORLD, &rank);
@@ -18,6 +19,15 @@ int main(int argc, char **argv) {
     if (rank==0) {
     // deallocation of 2D array 
     }
-    MPI_Finalize();
+    MPI_Finalize();*/
+    int M = 10;
+    int N = 10;
+    int** A = random_array(M, N);
+    for (int i = 0; i < M; i++) {
+        for (int j = 0; j < N; j++) {
+            printf("%i ", A[i][j]);
+        }
+        printf("\n");
+    }
     return 0;
 }
