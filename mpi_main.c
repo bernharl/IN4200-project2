@@ -23,7 +23,6 @@ int main(int argc, char **argv) {
     num_triple_friends = MPI_count_friends_of_ten (M, N, v);
     printf("MPI rank <%d>: number of triple friends=%d\n",rank, num_triple_friends);
     if (rank==0) {
-        printf("%i ??\n", v[0][0]);
         free(v[0]);
         free(v);
     // deallocation of 2D array 
