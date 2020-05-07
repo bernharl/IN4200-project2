@@ -15,8 +15,8 @@ int count_friends_of_ten(int M, int N, int** v) {
 				tmp = (v[i][j] + v[i+1][j+1] + v[i+2][j+2]) == 10;
 				friends += tmp;
 			}
-			if (i >= 2 && j >= 2) {
-				tmp = (v[i][j] + v[i-1][j-1] + v[i-2][j-2]) == 10;
+			if (i >= 2 && j < N-2) {
+				tmp = (v[i][j] + v[i-1][j+1] + v[i-2][j+2]) == 10;
 				friends += tmp;
 			}
 		}

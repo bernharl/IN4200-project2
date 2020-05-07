@@ -52,7 +52,8 @@ int** example_array() {
 
 int** random_array(int M, int N) {
     int** A = allocate_2d(M, N);
-    srand(time(0));
+    //srand(time(0));
+    srand(1);
     for (int i = 0; i < M; i++) {
         for (int j = 0; j < N; j++) {
             A[i][j] = rand() % 10;
@@ -61,15 +62,3 @@ int** random_array(int M, int N) {
     return A;
     
 }    
-void free_2d(int** A, int M, int N) {
-    /*for (int i = 0; i < M; i++) {
-        for (int j = 0; j < N; j++) {
-            free(A[i][j]);
-        }
-    }*/
-    //for (int i = 0; i < N; i++) {
-    //    free(A[i]);
-    //}
-    free(A[0]);
-    free(A);
-}
