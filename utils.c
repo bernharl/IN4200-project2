@@ -1,4 +1,7 @@
 int** allocate_2d(int Nx, int Ny) {
+    /*
+     * Allocating a C-contigous 2D array
+     */
     int *A_storage = (int*)malloc(Nx * Ny * sizeof(int));
     int **A = (int**)malloc(Nx * sizeof(int*));
     for (int i=0; i<Nx; i++) {
@@ -8,6 +11,9 @@ int** allocate_2d(int Nx, int Ny) {
 }
 
 int** zeros_2d(int Nx, int Ny) {
+    /*
+     * Returns an allocated C-contigous 2D array with zero values.
+     */
     int** A = allocate_2d(Nx, Ny);
     for (int i = 0; i<Nx; i++) {
         for (int j = 0; j<Ny; j++) {
@@ -18,14 +24,23 @@ int** zeros_2d(int Nx, int Ny) {
 }
 
 int example_M() {
+    /* 
+     * Used for debug purposes
+     */
     return 4;
 }
 
 int example_N() {
+    /* 
+     * Used for debug purposes
+     */
     return 5;
 }
 
 int** example_array() {
+    /* 
+     * Example array shown in task description, used for debug purposes
+     */
     int** A = allocate_2d(example_M(), example_N());
     A[0][0] = 1;
     A[0][1] = 5;
@@ -51,9 +66,11 @@ int** example_array() {
 }
 
 int** random_array(int M, int N) {
+    /*
+     * Initializes C-contigous 2D array and fills it with random values from 0 - 10
+     */
     int** A = allocate_2d(M, N);
-    //srand(time(0));
-    srand(1);
+    srand(time(0));
     for (int i = 0; i < M; i++) {
         for (int j = 0; j < N; j++) {
             A[i][j] = rand() % 10;
