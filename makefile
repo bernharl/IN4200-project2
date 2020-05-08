@@ -15,4 +15,4 @@ $(mpi_name): mpi_main.c
 
 	
 clean: 
-	rm *.out
+	rm $(name) $(mpi_name)
